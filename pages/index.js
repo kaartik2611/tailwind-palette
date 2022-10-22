@@ -7,6 +7,7 @@ import StateContext from "../context/stateContext";
 export default function Home({ res }) {
   const [success, setSuccess] = React.useState(false);
   const { state } = React.useContext(StateContext);
+  const [hasMounted, setHasMounted] = React.useState(false);
   React.useEffect(() => {
     const bmz = setTimeout(() => {
       setSuccess(false);
@@ -16,6 +17,12 @@ export default function Home({ res }) {
       clearTimeout(bmz);
     };
   }, [success]);
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+  if (!hasMounted) {
+    return null;
+  }
 
   return (
     <>
