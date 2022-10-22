@@ -8,7 +8,8 @@ import { createObject } from "../utils/data";
 //   loading: () => <div>Loading...</div>,
 //   ssr: false,
 // });
-export default function Home({ res }) {
+import { res } from "../utils/json";
+export default function Home() {
   const [hasMounted, setHasMounted] = React.useState(false);
   React.useEffect(() => {
     setHasMounted(true);
@@ -30,10 +31,4 @@ export default function Home({ res }) {
       <Colors res={res} />
     </>
   );
-}
-export async function getStaticProps() {
-  const res = createObject();
-  return {
-    props: { res },
-  };
 }

@@ -1,7 +1,6 @@
 import React from "react";
 import StateContext from "../context/stateContext";
 function Colors({ res }) {
-  console.log(res);
   const [success, setSuccess] = React.useState(false);
   const { state } = React.useContext(StateContext);
   React.useEffect(() => {
