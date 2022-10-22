@@ -29,6 +29,7 @@ function Colors({ res }) {
                 key={c.name}
                 className={`w-[3.3rem] h-[3.3rem] cursor-pointer bg-${c.name}`}
                 style={{
+                  backgroundColor: c.hex,
                   color: `${res[i].colors[9 - j].hex}`,
                   borderTopLeftRadius: `${j === 9 && "15%"}`,
                   borderTopRightRadius: `${j === 9 && "15%"}`,
