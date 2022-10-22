@@ -27,15 +27,7 @@ function Colors({ res }) {
                   setSuccess(true);
                 }}
                 key={c.name}
-                className="w-[3.3rem] h-[3.3rem] cursor-pointer"
-                style={{
-                  backgroundColor: c.hex,
-                  color: `${res[i].colors[9 - j].hex}`,
-                  borderTopLeftRadius: `${j === 9 && "15%"}`,
-                  borderTopRightRadius: `${j === 9 && "15%"}`,
-                  borderBottomLeftRadius: `${j === 0 && "15%"}`,
-                  borderBottomRightRadius: `${j === 0 && "15%"}`,
-                }}
+                className={`w-[3.3rem] h-[3.3rem] cursor-pointer bg-${c.name}`}
               >
                 <p className="opacity-0 hover:opacity-100 p-4 font-bold">
                   {c.name.split("-")[1]}
